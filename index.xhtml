@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-model href="http://www.oxygenxml.com/1999/xhtml/xhtml-xforms.nvdl" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://localhost:8080/exist/xforms/xsltforms/xsltforms.xsl"?>
+<?css-conversion no?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:exist="http://exist.sourceforge.net/NS/exist">
+    <head>
+        <title>Shelley-Godwin Archive Metadata Editor</title>
+        <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="lib/FontAwesome/css/font-awesome.css" />
+        <style type="text/css">
+      body{
+          line-height:19px;
+      }
+      #extent{
+          margin-bottom:20px;
+      }
+      .popover-link{
+          font-size:19px;
+          padding-left:10px;
+      }
+      .xforms-alert{
+          font-size:19px;
+          padding-left:10px;
+          color:rgb(185, 81, 74);
+      }
+      .page-controls{
+          margin-top:2em;
+      }
+      .pager{
+          text-align:left;
+      }</style>
+        
+        <xf:model id="admin">
+            
+            <xf:instance id="file-utils" xmlns="http://exist.sourceforge.net/NS/exist"
+                src="http://localhost:8080/exist/rest/db/home/sga/posted_data/"></xf:instance>
+            
+            <xf:instance id="form-controls" xmlns="">
+                <data>
+                    <input-file>blank_template.xml</input-file>
+                </data>
+            </xf:instance>
+            
+        </xf:model>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron subhead">
+                <h1>Metadata Editor</h1>
+                <p class="lead">for the Shelley-Godwin Archive</p>
+            </div>
+            <div class="hero-unit">
+                <h1>Welcome</h1>
+                <p>This form will guide you through supplying metadata for the 
+                    <a href="http://www.shelleygodwinarchive.org/">Shelley-Godwin Archive</a> 
+                    project.</p>
+                <p>
+                    <a href="xq/xform-runner.xquery?fid=blank_template.xml" class="btn btn-primary btn-large">Begin New</a>
+                </p>
+            </div>
+            <div id="loader" class="span4 offset8">
+                <xf:select1 id="load-from-file" ref="instance('form-controls')/input-file">
+                    <xf:label>Or, choose a file to load existing data: </xf:label>
+                    <xf:itemset nodeset="instance('file-utils')//exist:resource">
+                        <xf:label ref="@name"></xf:label>
+                        <xf:value ref="@name"></xf:value>
+                        <xf:action ev:event="DOMFocusOut">
+                            <xf:setvalue ref="instance('form-controls')/input-file"/>
+                        </xf:action>
+                    </xf:itemset>
+                </xf:select1>
+                <p>
+                    <xf:trigger>
+                    <xf:label>Load</xf:label>
+                    <xf:action ev:event="DOMActivate">
+                        <xf:load>
+                            <xf:resource value="concat('xq/xform-runner.xquery?fid=', instance('form-controls')/input-file)"></xf:resource>
+                        </xf:load>
+                    </xf:action>
+                </xf:trigger>
+                </p>
+            </div>
+        </div>
+        
+        <!-- Just scripts below here -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/sga_utils.js"></script>
+    </body>
+</html>
