@@ -1,0 +1,94 @@
+<?xml-model href="file:../../derivatives/shelley-godwin-metadata.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<tei:TEI xmlns:tei="http://www.tei-c.org/ns/1.0">
+    <tei:teiHeader>
+        <tei:fileDesc>
+            <tei:titleStmt>
+                <tei:title type="main"/>
+                <tei:title type="sub">An electronic transcription</tei:title>
+                <tei:respStmt xml:id="md_editor">
+                    <tei:resp>Metadata editor</tei:resp>
+                    <tei:name/>
+                </tei:respStmt>
+                <tei:respStmt>
+                    <tei:resp/>
+                    <tei:name/>
+                </tei:respStmt>
+            </tei:titleStmt>
+            <tei:editionStmt>
+                <tei:edition>Shelley-Godwin Archive edition, <tei:date>2012-2014</tei:date>
+                </tei:edition>
+            </tei:editionStmt>
+            <tei:publicationStmt>
+                <tei:distributor>Oxford University</tei:distributor>
+                <tei:address>
+                    <tei:addrLine>
+                        <tei:ref target="http://www.shelleygodwinarchive.org/">http://www.shelleygodwinarchive.org/</tei:ref>
+                    </tei:addrLine>
+                </tei:address>
+                <tei:availability status="free">
+                    <tei:p>
+                        <tei:ref target="http://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal</tei:ref>. 
+                        To the extent possible under law, the creators of the metadata records for the Shelley-Godwin Archive 
+                        have waived all copyright and related or neighboring rights to this work.</tei:p>
+                </tei:availability>
+                <tei:pubPlace>Oxford, UK, and College Park, MD</tei:pubPlace>
+            </tei:publicationStmt>
+            <tei:sourceDesc>
+                <tei:msDesc>
+                    <tei:msIdentifier>
+                        <tei:repository>ukoxu</tei:repository>
+                        <tei:collection/>
+                        <tei:idno/>
+                    </tei:msIdentifier>
+                    <tei:msContents>
+                        <tei:summary/>
+                    </tei:msContents>
+                    <tei:physDesc>
+                        <tei:objectDesc>
+                            <tei:supportDesc>
+                                <tei:support>
+                                    <tei:p/>
+                                </tei:support>
+                                <tei:extent/>
+                                <tei:foliation xml:id="original">
+                                    <tei:p/>
+                                </tei:foliation>
+                                <tei:foliation xml:id="modern">
+                                    <tei:p/>
+                                </tei:foliation>
+                                <tei:condition>
+                                    <tei:p/>
+                                </tei:condition>
+                            </tei:supportDesc>
+                        </tei:objectDesc>
+                        <tei:handDesc>
+                            <tei:p/>
+                        </tei:handDesc>
+                    </tei:physDesc>
+                    <tei:additional>
+                        <tei:adminInfo>
+                            <tei:recordHist>
+                                <tei:p>Adapted from <tei:bibl/>
+                                </tei:p>
+                            </tei:recordHist>
+                        </tei:adminInfo>
+                        <tei:listBibl>
+                            <tei:bibl/>
+                        </tei:listBibl>
+                    </tei:additional>
+                </tei:msDesc>
+            </tei:sourceDesc>
+        </tei:fileDesc>
+        <tei:profileDesc>
+            <tei:creation>
+                <tei:date when=""/>
+            </tei:creation>
+        </tei:profileDesc>
+        <tei:revisionDesc>
+            <tei:change who="" when=""/>
+        </tei:revisionDesc>
+    </tei:teiHeader>
+    <tei:text>
+        <!-- Intentionally left blank -->
+    </tei:text>
+</tei:TEI>
