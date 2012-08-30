@@ -281,3 +281,10 @@ $(document).ready(
         setImageEventListener();
     }
 );
+
+$(window).load(function() {
+// If not a blank form (loading existing data), disable the repository selector
+        if(location.search.split('=')[1] !== 'blank_template.xml') {
+            $('#select-repo select').attr('disabled', 'disabled');
+        }
+});
