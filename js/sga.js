@@ -285,7 +285,7 @@ $(document).ready(
 
 $(window).load(function() {
 // If not a blank form (loading existing data), disable the repository selector
-        if(location.search.split('=')[1] !== 'blank_template.xml') {
+        if(location.pathname.search(/edit/) !== -1) {
             $('#select-repo select').attr('disabled', 'disabled');
         }
 });
