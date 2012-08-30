@@ -23,7 +23,7 @@ declare option exist:serialize "process-xsl-pi=no";
 
 let $attribute := request:set-attribute("betterform.filter.ignoreResponseBody", "true")
 
-let $base_url := 'http://localhost:8080/exist/rest/db/home/sga/'
+let $base_url := '/metadata/'
 let $load_path := 'posted_data/'
 let $param := request:get-parameter("fid", 0)
 
@@ -35,7 +35,7 @@ let $form :=
   xmlns:exist="http://exist.sourceforge.net/NS/exist">
   <head>
     <title>Shelley-Godwin Archive Metadata Editor</title>
-    <link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../lib/FontAwesome/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.8.2/css/jquery.dataTables.css" />
     <!-- <link rel="stylesheet" type="text/css" href="../lib/dataTables/jquery.dataTables.css" /> -->
@@ -114,7 +114,7 @@ let $form :=
 
       <!-- Submission -->
       <xf:submission id="save" method="put" replace="none">
-        <xf:resource value="concat('http://localhost:8080/exist/webdav/db/home/sga/posted_data/', instance('control-codes')/output-filename)"></xf:resource>
+        <xf:resource value="concat('/metadata/posted_data/', instance('control-codes')/output-filename)"></xf:resource>
       </xf:submission>
 
       <!-- Messages -->
@@ -127,7 +127,7 @@ let $form :=
   <body>
     <div class="container">
       <div class="jumbotron subhead">
-        <h1><a href="../index.xhtml">Metadata Editor</a></h1>
+        <h1><a href="/metadata/">Metadata Editor</a></h1>
         <p class="lead"><em>for the Shelley-Godwin Archive</em></p>
         <div class="navbar">
           <xf:trigger>
@@ -641,7 +641,7 @@ let $form :=
     </body>
 </html>
 
-let $xslt-pi := processing-instruction xml-stylesheet {'type="text/xsl" href="/exist/xforms/xsltforms/xsltforms.xsl" '}
+let $xslt-pi := processing-instruction xml-stylesheet {'type="text/xsl" href="http://50.19.209.106/fs/xforms/xsltforms/xsltforms.xsl" '}
 let $css-pi := processing-instruction css-conversion {'no'}
 
 return ($xslt-pi,$css-pi,$form)

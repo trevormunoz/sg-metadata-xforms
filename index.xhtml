@@ -1,15 +1,9 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<?xml-model href="http://www.oxygenxml.com/1999/xhtml/xhtml-xforms.nvdl" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
-<?xml-stylesheet type="text/xsl" href="http://localhost:8080/exist/xforms/xsltforms/xsltforms.xsl"?>
-<?css-conversion no?>
-
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms"
-    xmlns:ev="http://www.w3.org/2001/xml-events"
-    xmlns:exist="http://exist.sourceforge.net/NS/exist">
+<?xml-model href="http://www.oxygenxml.com/1999/xhtml/xhtml-xforms.nvdl" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?><?xml-stylesheet type="text/xsl" href="http://50.19.209.106/fs/xforms/xsltforms/xsltforms.xsl"?><?css-conversion no?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:xf="http://www.w3.org/2002/xforms">
     <head>
         <title>Shelley-Godwin Archive Metadata Editor</title>
-        <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="lib/FontAwesome/css/font-awesome.css" />
+        <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="lib/FontAwesome/css/font-awesome.css"/>
         <style type="text/css">
       body{
           line-height:19px;
@@ -32,18 +26,13 @@
       .pager{
           text-align:left;
       }</style>
-        
         <xf:model id="admin">
-            
-            <xf:instance id="file-utils" xmlns="http://exist.sourceforge.net/NS/exist"
-                src="http://localhost:8080/exist/rest/db/home/sga/posted_data/"></xf:instance>
-            
-            <xf:instance id="form-controls" xmlns="">
+            <xf:instance xmlns="http://exist.sourceforge.net/NS/exist" id="file-utils" src="posted_data/"/>
+            <xf:instance xmlns="" id="form-controls">
                 <data>
                     <input-file>blank_template.xml</input-file>
                 </data>
             </xf:instance>
-            
         </xf:model>
     </head>
     <body>
@@ -58,15 +47,15 @@
                     <a href="http://www.shelleygodwinarchive.org/">Shelley-Godwin Archive</a> 
                     project.</p>
                 <p>
-                    <a href="xq/xform-runner.xquery?fid=blank_template.xml" class="btn btn-primary btn-large">Begin New</a>
+                    <a href="create/" class="btn btn-primary btn-large">Begin New</a>
                 </p>
             </div>
             <div id="loader" class="span4 offset8">
                 <xf:select1 id="load-from-file" ref="instance('form-controls')/input-file">
                     <xf:label>Or, choose a file to load existing data: </xf:label>
                     <xf:itemset nodeset="instance('file-utils')//exist:resource">
-                        <xf:label ref="@name"></xf:label>
-                        <xf:value ref="@name"></xf:value>
+                        <xf:label ref="@name"/>
+                        <xf:value ref="@name"/>
                         <xf:action ev:event="DOMFocusOut">
                             <xf:setvalue ref="instance('form-controls')/input-file"/>
                         </xf:action>
@@ -74,20 +63,20 @@
                 </xf:select1>
                 <p>
                     <xf:trigger>
-                    <xf:label>Load</xf:label>
-                    <xf:action ev:event="DOMActivate">
-                        <xf:load>
-                            <xf:resource value="concat('xq/xform-runner.xquery?fid=', instance('form-controls')/input-file)"></xf:resource>
-                        </xf:load>
-                    </xf:action>
-                </xf:trigger>
+                        <xf:label>Load</xf:label>
+                        <xf:action ev:event="DOMActivate">
+                            <xf:load>
+                                <xf:resource value="concat('edit/', instance('form-controls')/input-file)"/>
+                            </xf:load>
+                        </xf:action>
+                    </xf:trigger>
                 </p>
             </div>
         </div>
         
         <!-- Just scripts below here -->
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/sga_utils.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"/>
+        <script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"/>
+        <script type="text/javascript" src="js/sga.js"/>
     </body>
 </html>

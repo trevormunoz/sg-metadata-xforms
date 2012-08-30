@@ -13,13 +13,13 @@ function listImages(collection, item) {
 	// Check to see if a partial manifest already exists
 	var checkServer = $.ajax({
 		type: "HEAD",
-		url: "http://localhost:8080/exist/rest/db/home/sga/manifests/" + item + ".xml"
+		url: "/metadata/manifests/" + item + ".xml"
 	});
 	// If a partial manifest exists, GET it and construct a table with the data returned
 	checkServer.done(function() {
 		var manifestPromise = $.ajax({
 			type: "GET",
-			url: "http://localhost:8080/exist/rest/db/home/sga/manifests/" + item + ".xml",
+			url: "/metadata/manifests/" + item + ".xml",
 			dataType: "xml"
 		});
 		// Create table rows with info retrieved from the server: filename | link to page image | label
@@ -78,7 +78,7 @@ function listImages(collection, item) {
 	checkServer.fail(function() {
 		var remoteDirPromise = $.ajax({
 			type: "GET",
-			url: "image_getter.xquery?coll-id="+collection+"&item="+item,
+			url: "/metadata/xq/image_getter.xquery?coll-id="+collection+"&item="+item,
 			dataType: "xml"
 		});
 		remoteDirPromise.done(function(xml){
@@ -142,7 +142,7 @@ function getItems(param) {
     });
 	var getItemPromise = $.ajax({
 		type: 'GET',
-		url: 'dir_parser.xquery?coll-id=' + param,
+		url: '/metadata/xq/dir_parser.xquery?coll-id=' + param,
 		dataType: 'xml',
 		timeout: 30000
 	});	
@@ -221,8 +221,8 @@ function saveManifest() {
     xmlString += '</items>';
     var savePromise = $.ajax({
         type: "PUT",
-        url: "http://localhost:8080/exist/webdav/db/home/sga/manifests/"+$('#itemID').text()+".xml",
-        contentType: "text/xml",
+        url: "/metadata/manifests/"+$('#itemID').text()+".xml",
+        contentType: "application/xml",
         data: xmlString
     });
     savePromise.done(function(){
@@ -232,6 +232,7 @@ function saveManifest() {
          window.setTimeout(function() { $(".alert-success").alert('close'); }, 2000);
     });
 }
+
 
 $(document).ready(
     function () {
