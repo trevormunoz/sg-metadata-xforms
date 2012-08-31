@@ -92,7 +92,7 @@ let $form :=
         nodeset="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[@type='main']"
         required="true()"></xf:bind>
       <xf:bind id="date"
-        nodeset="/tei:TEI/tei:teiHeader/tei:profileDesc/tei:creation/tei:date/@when" type="gYear"></xf:bind>
+        nodeset="/tei:TEI/tei:teiHeader/tei:profileDesc/tei:creation/tei:date/@when"></xf:bind>
       <xf:bind id="desc-label" nodeset="//tei:msDesc/tei:msContents/tei:summary" required="true()"></xf:bind>
 
       <xf:bind id="call-number" nodeset="//tei:msDesc/tei:msIdentifier/tei:idno" required="true()"></xf:bind>
@@ -186,7 +186,7 @@ let $form :=
                 <xf:label>Date created: </xf:label>
                 <!--<xf:message ev:event="xforms-invalid">Dates must be of the form: YYYY</xf:message>-->
               </xf:input>
-              <a class="popover-link" href="#" rel="popover" data-original-title="creation date" data-content="The date of creation of the resource, YYYY.">
+              <a class="popover-link" href="#" rel="popover" data-original-title="creation date" data-content="The date of creation of the resource, YYYY-MM-DD.">
                 <i class="icon-info-sign icon-large"></i>
               </a>
             </p>
