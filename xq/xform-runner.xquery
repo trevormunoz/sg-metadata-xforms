@@ -25,7 +25,8 @@ let $form_url := concat($base_url, $load_path, $param)
 let $form :=
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:xf="http://www.w3.org/2002/xforms"
   xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:tei="http://www.tei-c.org/ns/1.0"
-  xmlns:exist="http://exist.sourceforge.net/NS/exist">
+  xmlns:exist="http://exist.sourceforge.net/NS/exist"
+  tei:dummy="Firefox is stupid">
   <head>
     <title>Shelley-Godwin Archive Metadata Editor</title>
     <link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css" />
