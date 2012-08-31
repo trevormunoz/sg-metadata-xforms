@@ -38,6 +38,7 @@ let $form :=
     <link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../lib/FontAwesome/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.8.2/css/jquery.dataTables.css" />
+    <link rel="stylesheet" type="text/css" href="../lib/fancyBox/source/jquery.fancybox.css" />
     <!-- <link rel="stylesheet" type="text/css" href="../lib/dataTables/jquery.dataTables.css" /> -->
     <style type="text/css"><![CDATA[/**/
       body{
@@ -631,6 +632,7 @@ let $form :=
     <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.8.2/jquery.dataTables.min.js"></script>
     <!-- <script type="text/javascript" src="../lib/dataTables/jquery.dataTables.min.js"></script> -->
     <script type="text/javascript" src="../lib/jquery.jeditable.mini.js"></script>
+    <script type="text/javascript" src="../lib/fancyBox/source/jquery.fancybox.pack.js"></script>
     <script type="text/javascript" src="../js/sga.js"></script>
     <script type="text/javascript">
     <![CDATA[

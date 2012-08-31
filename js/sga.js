@@ -28,7 +28,7 @@ function listImages(collection, item) {
 			$('#imageTable > h2').append(item);
 			// Parse the XML returned by AJAX and build html strings with the data. Add them to the table
 			$(xml).find("item").each(function(){
-				var tdString = '<tr><td>'+$(this).children("filename").text()+'</td><td><a href="http://sga.mith.org/images/derivatives/'+collection+'/'+$(this).children("filename").text()+'" target="_blank"><i class="icon-picture"></i></a></td><td class="editable">'+$(this).children("label").text()+'</td></tr>';
+				var tdString = '<tr><td>'+$(this).children("filename").text()+'</td><td><a class="fancybox" href="http://sga.mith.org/images/derivatives/'+collection+'/'+$(this).children("filename").text()+'" target="_blank"><i class="icon-picture"></i></a></td><td class="editable">'+$(this).children("label").text()+'</td></tr>';
 				$('#page-images').prepend(tdString);
 			});
 		});
@@ -279,6 +279,7 @@ $(document).ready(
         $('#imageTable').hide();
         $('#ajax-loader').hide();
 
+        $(".fancybox").fancybox();
         setImageEventListener();
     }
 );
