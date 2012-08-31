@@ -107,10 +107,14 @@ let $form :=
       <xf:submission id="save" method="put" replace="none">
         <xf:resource value="concat('/metadata/posted_data/', instance('control-codes')/output-filename)"></xf:resource>
       </xf:submission>
+      
+      <xf:action ev:observer="save" ev:event="xforms-submit-done">
+        <xf:load resource="javascript:customSaveMessage()"></xf:load>
+      </xf:action>
 
       <!-- Messages -->
       <!--<xf:message level="modal" ev:event="xforms-submit-error">Something went wrong with your submission. Please check that all required fields have been completed and no validation errors are present. If the problem persists email trevor.munoz@gmail.com</xf:message>-->
-      <xf:message level="modal" ev:event="xforms-submit-done">Saved!</xf:message>
+      <!-- <xf:message level="modal" ev:event="xforms-submit-done">Saved!</xf:message> -->
 
     </xf:model>
   </head>
@@ -598,6 +602,14 @@ let $form :=
                   </xf:submit>
                 </li>
               </ul>
+              <div class="modal hide" id="save_modal">
+                    <div class="modal-header">
+                        <h3>Success!</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p>Metadata for this item has been saved. Thank you.</p>
+                    </div>
+           </div>
             </div>
         </xf:case>
         </xf:switch>
@@ -623,6 +635,12 @@ let $form :=
     <![CDATA[
         var makeEditable = function() {
         $('tr.xforms-repeat-item').last().find('input').removeAttr('readonly');
+        }]]>
+    </script>
+    <script type="text/javascript">
+    <![CDATA[
+        var customSaveMessage = function() {
+        $('#save_modal').modal('show');
         }]]>
     </script>
     </body>
