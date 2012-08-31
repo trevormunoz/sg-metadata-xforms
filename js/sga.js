@@ -268,6 +268,7 @@ $(document).ready(
         $("#physical-extent input").attr("placeholder", "163 leaves");
         $("#physical-support textarea").attr("placeholder", "Paper with watermark: anchor in a circle with star on top, countermark B-B with trefoil similar to Moschin, Anchor N 1680, 1570-1585.");
         $("#foliation-orig textarea").attr("placeholder", "Folio numbers were added in brown ink ca. 1720-1730 in the upper right corner of all recto-pages.");
+        $('#physical-condition textarea').attr("placeholder", "The manuscript shows signs of damage from water and mould on its outermost leaves.");
         $("#manu-hands textarea").attr("placeholder", "The manuscript is written in two contemporary hands. Hand I writes ff. 1r-22v and hand II ff. 23 and 24.");
         $("#metadata-creator input").attr("placeholder", "Liz Denlinger");
         $("#surrogate1 textarea").attr("placeholder", "Shelley, Mary W, and Charles E. Robinson. The Frankenstein Notebooks. New York: Garland Pub, 1996. Print.");
