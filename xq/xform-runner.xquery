@@ -572,7 +572,13 @@ let $form :=
                         </xf:action>
                     </xf:input>
                     </td>
-                    <td><xf:input ref="."></xf:input></td>
+                    <td>
+                        <xf:input ref=".">
+                            <xf:action ev:event="xforms-value-changed">
+                                <xf:setvalue ref="./@when" value="now()"></xf:setvalue>
+                            </xf:action>
+                        </xf:input>
+                    </td>
             </tr>
             </xf:repeat>
           </tbody>
