@@ -2,19 +2,12 @@ xquery version "1.0";
 declare namespace exist = "http://exist.sourceforge.net/NS/exist";
 declare namespace request="http://exist-db.org/xquery/request";
 
-(:
-  
+(: 
 Punch list:
-(must have)
-
-(probably need)  
-  * Add file manifest viewer (subform)
 
 (might want)
   * Add trigger to see preview on save (may involve xq)
-  * See if modals can be improved
-  * Add keyboard command bindings
-  
+
 :)
 
 declare option exist:serialize "method=xhtml media-type=text/xml";
