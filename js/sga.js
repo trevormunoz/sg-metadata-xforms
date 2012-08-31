@@ -271,6 +271,7 @@ $(document).ready(
         $('#physical-condition textarea').attr("placeholder", "The manuscript shows signs of damage from water and mould on its outermost leaves.");
         $("#manu-hands textarea").attr("placeholder", "The manuscript is written in two contemporary hands. Hand I writes ff. 1r-22v and hand II ff. 23 and 24.");
         $("#metadata-creator input").attr("placeholder", "Liz Denlinger");
+        $("#source textarea").attr("placeholder", "Oxford, Bodleian Library, Finding aid for MS. Abinger c. 56");
         $("#surrogate1 textarea").attr("placeholder", "Shelley, Mary W, and Charles E. Robinson. The Frankenstein Notebooks. New York: Garland Pub, 1996. Print.");
         $("#who input").attr("placeholder", "Charles Carter");
         $("#revision textarea").attr("placeholder", "Added more detailed information about hands");
