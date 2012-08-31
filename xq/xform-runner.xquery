@@ -82,7 +82,6 @@ let $form :=
 
       <xf:instance id="control-codes" xmlns="">
         <data>
-          <boolean1>false</boolean1>
           <output-filename>temp.xml</output-filename>
           <institution-id></institution-id>
         </data>
@@ -100,8 +99,7 @@ let $form :=
 
       <xf:bind id="xtra-foliation" nodeset="instance('control-codes')/boolean1" type="boolean"></xf:bind>
       <xf:bind id="foliation-modern"
-        nodeset="//tei:msDesc/tei:physDesc/tei:objectDesc/tei:supportDesc/tei:foliation[@xml:id='modern']"
-        relevant="instance('control-codes')/boolean1 != 'false'"></xf:bind>
+        nodeset="//tei:msDesc/tei:physDesc/tei:objectDesc/tei:supportDesc/tei:foliation[@xml:id='modern']"></xf:bind>
 
       <xf:bind id="meditor"
         nodeset="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:respStmt[@xml:id='md_editor']/tei:name"
