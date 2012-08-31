@@ -175,7 +175,7 @@ function getItems(param) {
             out.push(i);
         }
         $.map(out, function(val){
-            return $('#ajax-file-manifest').prepend('<li id="'+val+'" class="sga-item active"><a href="#">'+ val + '</a></li>' );
+            return $('#ajax-file-manifest').prepend('<li id="'+val+'" class="sga-item"><a href="#">'+ val + '</a></li>' );
         });
     }
     });
@@ -275,6 +275,7 @@ $(document).ready(
         $("#surrogate1 textarea").attr("placeholder", "Shelley, Mary W, and Charles E. Robinson. The Frankenstein Notebooks. New York: Garland Pub, 1996. Print.");
         $("#who input").attr("placeholder", "Charles Carter");
         $("#revision textarea").attr("placeholder", "Added more detailed information about hands");
+        $("#change-repeat input").attr("placeholder", "Click to edit");
 
         // Hide elements that will be used later for AJAX functionality
         $('#itemSelector').hide();
