@@ -618,7 +618,7 @@ let $form :=
       <div class="footer span12">
       
         <p>
-            <small>Powered by <a href="http://twitter.github.com/bootstrap/index.html">Bootstrap</a>, <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>, and poetry.</small>
+            <small>Powered by <a href="http://www.agencexml.com/xsltforms">XSLTForms</a>, <a href="http://twitter.github.com/bootstrap/index.html">Bootstrap</a>, <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>, <a href="http://fancyapps.com/fancybox/">fancyBox</a>, and poetry.</small>
         </p>
       </div>
     </div><!-- /.container -->
