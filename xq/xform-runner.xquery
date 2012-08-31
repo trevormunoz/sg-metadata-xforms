@@ -91,9 +91,6 @@ let $form :=
 
       <xf:bind id="call-number" nodeset="//tei:msDesc/tei:msIdentifier/tei:idno" required="true()"></xf:bind>
 
-      <xf:bind id="foliation-modern"
-        nodeset="//tei:msDesc/tei:physDesc/tei:objectDesc/tei:supportDesc/tei:foliation[@xml:id='modern']"></xf:bind>
-
       <xf:bind id="meditor"
         nodeset="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:respStmt[@xml:id='md_editor']/tei:name"
         required="true()"></xf:bind>
@@ -321,7 +318,7 @@ let $form :=
             </a>
               </div>
             <div id="fol2" class="span4 offset4">
-              <xf:textarea id="foliation-mod" bind="foliation-modern">
+              <xf:textarea id="foliation-mod" ref="tei:foliation[@xml:id='modern']/tei:p">
               <xf:label>Describe any additional foliation schemes present: </xf:label>
             </xf:textarea>
             </div>
