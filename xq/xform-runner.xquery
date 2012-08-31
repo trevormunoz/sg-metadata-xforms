@@ -90,7 +90,6 @@ let $form :=
 
       <xf:bind id="call-number" nodeset="//tei:msDesc/tei:msIdentifier/tei:idno" required="true()"></xf:bind>
 
-      <xf:bind id="xtra-foliation" nodeset="instance('control-codes')/boolean1" type="boolean"></xf:bind>
       <xf:bind id="foliation-modern"
         nodeset="//tei:msDesc/tei:physDesc/tei:objectDesc/tei:supportDesc/tei:foliation[@xml:id='modern']"></xf:bind>
 
@@ -317,9 +316,6 @@ let $form :=
             </a>
               </div>
             <div id="fol2" class="span4 offset4">
-              <xf:input bind="xtra-foliation">
-              <xf:label>Record another foliation scheme?</xf:label>
-            </xf:input>
               <xf:textarea id="foliation-mod" bind="foliation-modern">
               <xf:label>Describe any additional foliation schemes present: </xf:label>
             </xf:textarea>
@@ -403,7 +399,6 @@ let $form :=
           <div class="page-header">
             <h1>Data Provenance</h1>
           </div>
-          <xf:group ref="//tei:msDesc/tei:additional/tei:adminInfo/tei:recordHist">
             <p>
               <xf:input id="metadata-creator" bind="meditor">
                 <xf:label>Metadata created/edited for SGA by: </xf:label>
@@ -422,7 +417,6 @@ let $form :=
                 <i class="icon-info-sign icon-large"></i>
               </a>
             </p>
-          </xf:group>
             <div class="page-controls span4">
               <ul class="pager">
                 <li class="prev">
