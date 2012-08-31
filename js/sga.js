@@ -291,5 +291,10 @@ $(window).load(function() {
 // If not a blank form (loading existing data), disable the repository selector
         if(location.pathname.search(/edit/) !== -1) {
             $('#select-repo select').attr('disabled', 'disabled');
-        }
+	}
+//Temporary hack to workaround cross browser XSLTForms bug(?)
+        $('#metadata-creator').removeClass('xforms-disabled');
+        $('#foliation-orig').removeClass('xforms-disabled');
+        $('#foliation-mod').removeClass('xforms-disabled');
+
 });
