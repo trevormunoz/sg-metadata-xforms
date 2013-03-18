@@ -84,7 +84,7 @@ function listImages(collection, item) {
 		remoteDirPromise.done(function(xml){
 			$('#imageTable > h2').append(item);
 			$(xml).find("a").each(function(){
-				var tdString = '<tr><td>'+$(this).text()+'</td><td><a href="http://sga.mith.org/images/derivatives/'+collection+'/'+$(this).text()+'" target="_blank"><i class="icon-picture"></i></a></td><td class="editable">&#x20;</td></tr>';
+				var tdString = '<tr><td>'+$(this).text()+'</td><td><a class="fancybox" href="http://sga.mith.org/images/derivatives/'+collection+'/'+$(this).text()+'" target="_blank"><i class="icon-picture"></i></a></td><td class="editable">&#x20;</td></tr>';
 				$('#page-images').prepend(tdString);
 			});
 		});
